@@ -61,38 +61,38 @@
       <property name="rightMargin">
        <number>5</number>
       </property>
-      <item row="6" column="0" colspan="5">
+      <item row="6" column="0" colspan="6">
        <widget class="QPushButton" name="menu_video">
         <property name="text">
-         <string>视频播放</string>
+         <string>Videos</string>
         </property>
        </widget>
       </item>
-      <item row="16" column="0" colspan="5">
+      <item row="16" column="0" colspan="6">
        <widget class="QPushButton" name="menu_download">
         <property name="text">
-         <string>下载列表</string>
+         <string>Download List</string>
         </property>
        </widget>
       </item>
-      <item row="12" column="0" colspan="5">
+      <item row="12" column="0" colspan="6">
        <widget class="QPushButton" name="menu_system">
         <property name="text">
-         <string>系统工具</string>
+         <string>Tools</string>
         </property>
        </widget>
       </item>
-      <item row="13" column="0" colspan="5">
+      <item row="13" column="0" colspan="6">
        <widget class="QPushButton" name="menu_theme">
         <property name="text">
-         <string>主题美化</string>
+         <string>Beautify</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="0" colspan="5">
+      <item row="5" column="0" colspan="6">
        <widget class="QPushButton" name="menu_music">
         <property name="text">
-         <string>音乐欣赏</string>
+         <string>Music</string>
         </property>
        </widget>
       </item>
@@ -131,7 +131,7 @@
         </property>
        </spacer>
       </item>
-      <item row="0" column="4">
+      <item row="0" column="5">
        <spacer name="horizontalSpacer_8">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -147,14 +147,21 @@
         </property>
        </spacer>
       </item>
-      <item row="11" column="0" colspan="5">
+      <item row="11" column="0" colspan="6">
        <widget class="QPushButton" name="menu_dev">
         <property name="text">
-         <string>编程开发</string>
+         <string>Coding</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="3">
+      <item row="9" column="0" colspan="6">
+       <widget class="QPushButton" name="menu_office">
+        <property name="text">
+         <string>Office</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
        <widget class="QPushButton" name="pushButton_return">
         <property name="maximumSize">
          <size>
@@ -162,19 +169,15 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string>回到分类</string>
+        </property>
         <property name="text">
          <string/>
         </property>
         <property name="icon">
          <iconset resource="icons.qrc">
           <normaloff>:/icons/icons/category_active.svg</normaloff>:/icons/icons/category_active.svg</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0" colspan="5">
-       <widget class="QPushButton" name="menu_office">
-        <property name="text">
-         <string>办公学习</string>
         </property>
        </widget>
       </item>
@@ -191,59 +194,59 @@
         </property>
        </spacer>
       </item>
-      <item row="10" column="0" colspan="5">
+      <item row="10" column="0" colspan="6">
        <widget class="QPushButton" name="menu_read">
         <property name="text">
-         <string>阅读翻译</string>
+         <string>Translate</string>
         </property>
        </widget>
       </item>
-      <item row="14" column="0" colspan="5">
+      <item row="14" column="0" colspan="6">
        <widget class="QPushButton" name="menu_other">
         <property name="text">
-         <string>其他应用</string>
+         <string>Others</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0" colspan="5">
+      <item row="2" column="0" colspan="6">
        <widget class="QPushButton" name="menu_main">
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>商店首页</string>
+         <string>FrontPage</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0" colspan="5">
+      <item row="7" column="0" colspan="6">
        <widget class="QPushButton" name="menu_photo">
         <property name="text">
-         <string>图形图像</string>
+         <string>Images</string>
         </property>
        </widget>
       </item>
-      <item row="8" column="0" colspan="5">
+      <item row="8" column="0" colspan="6">
        <widget class="QPushButton" name="menu_game">
         <property name="text">
-         <string>游戏娱乐</string>
+         <string>Games</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="0" colspan="5">
+      <item row="4" column="0" colspan="6">
        <widget class="QPushButton" name="menu_chat">
         <property name="text">
-         <string>社交沟通</string>
+         <string>Chatting</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="5">
+      <item row="3" column="0" colspan="6">
        <widget class="QPushButton" name="menu_network">
         <property name="text">
-         <string>网络应用</string>
+         <string>Network</string>
         </property>
        </widget>
       </item>
-      <item row="15" column="0" colspan="5">
+      <item row="15" column="0" colspan="6">
        <widget class="QWidget" name="line1_widget" native="true">
         <property name="minimumSize">
          <size>
@@ -274,6 +277,26 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="pushButton_refresh">
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>重新加载</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/icons/refresh-page.svg</normaloff>:/icons/icons/refresh-page.svg</iconset>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -308,6 +331,9 @@
        </property>
        <item>
         <widget class="QWebEngineView" name="webEngineView">
+         <property name="contextMenuPolicy">
+          <enum>Qt::DefaultContextMenu</enum>
+         </property>
          <property name="url">
           <url>
            <string>about:blank</string>
@@ -351,7 +377,7 @@
           <number>0</number>
          </property>
          <property name="text">
-          <string>当前下载列表为空</string>
+          <string>The List is empty now.Go and Download some software!</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -428,8 +454,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>889</width>
-            <height>854</height>
+            <width>903</width>
+            <height>849</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -448,6 +474,78 @@
               <bool>true</bool>
              </property>
              <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="3" colspan="2">
+               <widget class="QLabel" name="label_appname">
+                <property name="font">
+                 <font>
+                  <family>Bitstream Charter</family>
+                  <pointsize>22</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="3" rowspan="5" colspan="7">
+               <widget class="QLabel" name="label_info">
+                <property name="font">
+                 <font>
+                  <kerning>true</kerning>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="label_appicon">
+                <property name="minimumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>128</width>
+                  <height>128</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-radius:10px;</string>
+                </property>
+                <property name="text">
+                 <string>ICON</string>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="9">
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
               <item row="3" column="2">
                <spacer name="horizontalSpacer_2">
                 <property name="orientation">
@@ -483,7 +581,7 @@
               <item row="5" column="1">
                <widget class="QPushButton" name="pushButton_download">
                 <property name="text">
-                 <string>安装</string>
+                 <string>Install</string>
                 </property>
                </widget>
               </item>
@@ -519,22 +617,9 @@
               <item row="6" column="1">
                <widget class="QPushButton" name="pushButton_uninstall">
                 <property name="text">
-                 <string>卸载</string>
+                 <string>Uninstall</string>
                 </property>
                </widget>
-              </item>
-              <item row="0" column="8">
-               <spacer name="horizontalSpacer_6">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
               </item>
               <item row="0" column="6">
                <widget class="QPushButton" name="pushButton_website">
@@ -548,54 +633,7 @@
                  <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>官网</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="5">
-               <spacer name="horizontalSpacer_7">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Fixed</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>10</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="0" column="3" colspan="2">
-               <widget class="QLabel" name="label_appname">
-                <property name="font">
-                 <font>
-                  <family>Bitstream Charter</family>
-                  <pointsize>22</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>软件名</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="3" rowspan="5" colspan="6">
-               <widget class="QLabel" name="label_info">
-                <property name="font">
-                 <font>
-                  <kerning>true</kerning>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                </property>
-                <property name="wordWrap">
-                 <bool>true</bool>
+                 <string>Site</string>
                 </property>
                </widget>
               </item>
@@ -615,42 +653,23 @@
                 </property>
                </spacer>
               </item>
-              <item row="3" column="1">
-               <widget class="QLabel" name="label_appicon">
-                <property name="minimumSize">
+              <item row="0" column="5">
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
                  <size>
-                  <width>128</width>
-                  <height>128</height>
+                  <width>10</width>
+                  <height>20</height>
                  </size>
                 </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>128</width>
-                  <height>128</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border-radius:10px;</string>
-                </property>
-                <property name="text">
-                 <string>图标</string>
-                </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
+               </spacer>
               </item>
-              <item row="0" column="7">
-               <widget class="QPushButton" name="pushButton">
-                <property name="text">
-                 <string>分享</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="3" colspan="6">
+              <item row="1" column="3" colspan="7">
                <widget class="QWidget" name="widget" native="true">
                 <property name="minimumSize">
                  <size>
@@ -679,8 +698,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This app is developed by community user,we give this tag to honor those who contribute to the Linux Ecology&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This app is developed by community user,we give this tag to honor those who contribute to the Linux Ecology&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/community-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -692,8 +717,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to Ubuntu 20.04&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to Ubuntu 20.04&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>UB</string>
                    </property>
                   </widget>
                  </item>
@@ -705,8 +736,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to deepin 20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to deepin 20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/deepin-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -718,8 +755,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to UOS home 20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to UOS home 20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/uos.svg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -731,8 +774,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is a  DTK5 app,which means it would have better effect on Deepin Desktop Environment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is a  DTK5 app,which means it would have better effect on Deepin Desktop Environment&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/dtk-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -757,8 +806,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A deepin-wine5 app.If you are using ubuntu or other non-deepin distro,you should deploy deepin-wine5 by your self.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A deepin-wine5 app.If you are using ubuntu or other non-deepin distro,you should deploy deepin-wine5 by your self.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>wine</string>
                    </property>
                   </widget>
                  </item>
@@ -770,8 +825,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An Appimage to deb app.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An Appimage to deb app.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/a2d-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -791,6 +852,13 @@
                 </layout>
                </widget>
               </item>
+              <item row="0" column="8">
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Share</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
            </item>
@@ -805,7 +873,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>详细介绍</string>
+                 <string>Info</string>
                 </property>
                </widget>
               </item>
@@ -851,7 +919,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>软件截图</string>
+                 <string>ScreenShots</string>
                 </property>
                </widget>
               </item>
@@ -868,8 +936,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>851</width>
-                   <height>323</height>
+                   <width>869</width>
+                   <height>325</height>
                   </rect>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -998,8 +1066,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>692</width>
-            <height>994</height>
+            <width>903</width>
+            <height>852</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_23">
@@ -1014,7 +1082,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>线路设置</string>
+                 <string>Line Settings</string>
                 </property>
                </widget>
               </item>
@@ -1030,7 +1098,7 @@
                     </size>
                    </property>
                    <property name="text">
-                    <string>线路选择：</string>
+                    <string>Choose Line:</string>
                    </property>
                   </widget>
                  </item>
@@ -1053,7 +1121,7 @@
                  <item>
                   <widget class="QPushButton" name="pushButton_updateServer">
                    <property name="text">
-                    <string>刷新</string>
+                    <string>Refresh</string>
                    </property>
                   </widget>
                  </item>
@@ -1066,7 +1134,7 @@
                     </size>
                    </property>
                    <property name="text">
-                    <string> 重启商店后生效</string>
+                    <string>Take effect when restart </string>
                    </property>
                   </widget>
                  </item>
@@ -1095,7 +1163,7 @@
                     <string notr="true">color:#808080</string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;源服务器的作用是保证软件更新，并且支持使用apt工具获取软件。通常我们更建议你使用第一个线路作为更新源，一般是最稳定的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The role of the source server is to ensure that the software is updated, and supports the use of the apt tool to get the software. We usually prefer that you use the first line as the update source, which is generally the most stable. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="wordWrap">
                     <bool>true</bool>
@@ -1105,14 +1173,14 @@
                  <item row="0" column="2">
                   <widget class="QPushButton" name="pushButton_updateApt">
                    <property name="text">
-                    <string>更新源</string>
+                    <string>Update</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_6">
                    <property name="text">
-                    <string>更新源服务器：</string>
+                    <string>Source Server</string>
                    </property>
                   </widget>
                  </item>
@@ -1132,7 +1200,7 @@
                  <item row="0" column="1">
                   <widget class="QLabel" name="label_aptserver">
                    <property name="text">
-                    <string>服务器</string>
+                    <string>Server</string>
                    </property>
                   </widget>
                  </item>
@@ -1153,7 +1221,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>缓存目录</string>
+                 <string>Temp</string>
                 </property>
                </widget>
               </item>
@@ -1176,7 +1244,7 @@
                  <item row="0" column="2">
                   <widget class="QPushButton" name="pushButton_clear">
                    <property name="text">
-                    <string>清空</string>
+                    <string>Clean</string>
                    </property>
                   </widget>
                  </item>
@@ -1186,7 +1254,7 @@
                     <string notr="true">color:#808080</string>
                    </property>
                    <property name="text">
-                    <string>因为这个目录位于/tmp下，所以即使你不手动清空的话，其也将在系统重启时自动清空。</string>
+                    <string>Since the dictionary is at /tmp,It would be cleaned automatically when  system reboot.</string>
                    </property>
                   </widget>
                  </item>
@@ -1199,7 +1267,7 @@
                     </size>
                    </property>
                    <property name="text">
-                    <string>目录大小：</string>
+                    <string>Size:</string>
                    </property>
                   </widget>
                  </item>
@@ -1213,7 +1281,7 @@
                  <item row="0" column="0" colspan="2">
                   <widget class="QLabel" name="label_11">
                    <property name="text">
-                    <string>目录位置：/tmp/spark-store</string>
+                    <string>Location：/tmp/spark-store</string>
                    </property>
                   </widget>
                  </item>
@@ -1234,14 +1302,14 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>关于我们</string>
+                 <string>About us</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QLabel" name="label_5">
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;我们并不是官方团队，和你一样，我们也只是众多Linux/deepin系统爱好者和用户之中的一员，我们开发并且运营这个“Spark应用商店”，是为了让社区的朋友们一起分享好用的软件，或者一起参与开发，让大家都用到最新的，最优秀的软件。&lt;/p&gt;&lt;p&gt;我们并没有因此盈利，所有开发和维护人员都不会获得报酬，我们的主要支出大部分依赖于社区对我们的捐助，很感谢大家，这部分捐助让我们并不需要耗费太多精力去担心资金问题。&lt;/p&gt;&lt;p&gt;我们的服务和开发的软件都是免费供给大家使用，交流，学习的，但是在您的使用过程中一定要遵守当地的法律法规，否则出现任何问题和我们无关。&lt;/p&gt;&lt;p&gt;如果商店中任何一部分有侵犯您权益的行为，请告知我们&amp;lt;jifengshenmo@outlook.com&amp;gt;，我们会第一时间删除侵权内容。&lt;/p&gt;&lt;p&gt;如果你也想参与我们，不管是参与开发，设计，投递还是投稿作品，我们都欢迎你的加入。&lt;/p&gt;&lt;p&gt;QQ群：872690351&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;We are &lt;span style=&quot; font-weight:600;&quot;&gt;NOT&lt;/span&gt; the official team, just like you, we are just one of the many Linux/deepin system enthusiasts and users, we develop and run the &amp;quot;Spark Store&amp;quot;! &amp;quot;, is to bring the community together to share useful software, or to participate in development together, so that we all use the latest and greatest software. &lt;/p&gt;&lt;p&gt;We don't make a profit from this, all developers and maintainers don't get paid, and we rely on the community's donations to us for most of our expenses, which we are grateful for and which allow us not to spend too much energy worrying about funding. &lt;/p&gt;&lt;p&gt;Our service and software are free for everyone to use, communicate, and learn, but you must comply with local laws and regulations in the process of your use, otherwise any problems have nothing to do with us. &lt;/p&gt;&lt;p&gt;If any part of the store infringes your rights, please tell us &amp;lt;jifengshenmo@outlook.com&amp;gt; we will remove the infringing content as soon as possible. &lt;/p&gt;&lt;p&gt;If you'd like to get involved with us too, whether you're involved in development, design, pitching or submitting work, we welcome you to join us. &lt;/p&gt;&lt;p&gt;QQ group:872690351&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>

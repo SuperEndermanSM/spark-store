@@ -26,6 +26,7 @@
 #include <QClipboard>
 #include <DApplication>
 #include <DGuiApplicationHelper>
+#include <DPushButton>
 DWIDGET_USE_NAMESPACE
 
 Widget::Widget(DBlurEffectWidget *parent) :
@@ -39,20 +40,20 @@ Widget::Widget(DBlurEffectWidget *parent) :
     m_loadweb=ui->progressload;
     m_loadweb->show();
 
-    connect(ui->menu_main,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(0);});
-    connect(ui->menu_network,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(1);});
-    connect(ui->menu_chat,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(2);});
-    connect(ui->menu_music,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(3);});
-    connect(ui->menu_video,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(4);});
-    connect(ui->menu_photo,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(5);});
-    connect(ui->menu_game,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(6);});
-    connect(ui->menu_office,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(7);});
-    connect(ui->menu_read,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(8);});
-    connect(ui->menu_dev,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(9);});
-    connect(ui->menu_system,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(10);});
-    connect(ui->menu_theme,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(11);});
-    connect(ui->menu_other,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(12);});
-    connect(ui->menu_download,&QPushButton::clicked,[=](){Widget::chooseLeftMenu(13);});
+    connect(ui->menu_main,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(0);});
+    connect(ui->menu_network,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(1);});
+    connect(ui->menu_chat,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(2);});
+    connect(ui->menu_music,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(3);});
+    connect(ui->menu_video,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(4);});
+    connect(ui->menu_photo,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(5);});
+    connect(ui->menu_game,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(6);});
+    connect(ui->menu_office,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(7);});
+    connect(ui->menu_read,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(8);});
+    connect(ui->menu_dev,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(9);});
+    connect(ui->menu_system,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(10);});
+    connect(ui->menu_theme,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(11);});
+    connect(ui->menu_other,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(12);});
+    connect(ui->menu_download,&DPushButton::clicked,[=](){Widget::chooseLeftMenu(13);});
     // connect((ui->titlebar))
 
     // 搜索事件
@@ -141,18 +142,25 @@ void Widget::initUI()
     titlebar=ui->titlebar;
     titlebar->setCustomWidget(w_titlebar);
     // titlebar->setIcon(QIcon::fromTheme("spark-store"));
-    titlebar->setTitle("星火应用商店");
-    searchEdit->setPlaceholderText("搜索或打开链接");
+    titlebar->setTitle("Spark Store");
+    searchEdit->setPlaceholderText("Search or enter spk://");
     searchEdit->setFixedWidth(300);
     titlebar->setSeparatorVisible(false);
     // titlebar->setAutoHideOnFullscreen(true);
 
     // 添加菜单项
-    QAction *setting=new QAction("设置");
+    QAction *actionSubmission = new QAction("Submit App", this);
+    QAction *setting=new QAction("Settings");
+
     QMenu *menu=new QMenu;
+
     menu->addAction(setting);
+    menu->addAction(actionSubmission);
     titlebar->setMenu(menu);
+    connect(actionSubmission, &QAction::triggered, this,
+            [=](){QDesktopServices::openUrl(QUrl("https://upload.spark-app.store/"));});
     connect(setting,&QAction::triggered,this,&Widget::opensetting);
+
 
     // 初始化菜单数组
     left_list[0]=ui->menu_main;
@@ -256,6 +264,7 @@ void Widget::setTheme(bool isDark,QColor color)
 //        ui->scrollArea->setStyleSheet("background-color:#252525");
         ui->label_show->setStyleSheet("background-color:#252525");
         ui->pushButton_return->setIcon(QIcon(":/icons/icons/category_active_dark.svg"));
+        ui->pushButton_refresh->setIcon(QIcon(":/icons/icons/refresh-page-dark.svg"));
     }else {
         // 亮色模式
         themeIsDark=false;
@@ -266,6 +275,7 @@ void Widget::setTheme(bool isDark,QColor color)
 //        ui->scrollArea->setStyleSheet("background-color:#F8F8F8");
         ui->label_show->setStyleSheet("background-color:#F8F8F8");
         ui->pushButton_return->setIcon(QIcon(":/icons/icons/category_active.svg"));
+        ui->pushButton_refresh->setIcon(QIcon(":/icons/icons/refresh-page.svg"));
     }
     main_color=color;
     m_loadweb->setTheme(themeIsDark,color);
@@ -412,10 +422,10 @@ void Widget::updatefoot()
     ui->webfoot->setFixedHeight(allh-foot);
 }
 
-void Widget::loadappinfo(QUrl arg1)
+int Widget::loadappinfo(QUrl arg1)
 {
     if(arg1.isEmpty()){
-        return;
+        return 1;
     }
 
     //　先隐藏详情页负责显示截图的label
@@ -436,7 +446,7 @@ void Widget::loadappinfo(QUrl arg1)
 
     //　重置UI状态
     ui->pushButton_uninstall->hide();
-    ui->label_show->setText("正在加载，请稍候");
+    ui->label_show->setText("Loading...");
     ui->label_show->show();
     ui->pushButton_website->hide();
 
@@ -447,6 +457,9 @@ void Widget::loadappinfo(QUrl arg1)
 
     get_json.start("curl -o app.json "+arg1.toString());
     get_json.waitForFinished();
+    if(get_json.exitCode())
+      return 2;
+
     QFile app_json("app.json");
     if(app_json.open(QIODevice::ReadOnly)){
         // 成功得到json文件
@@ -474,20 +487,20 @@ void Widget::loadappinfo(QUrl arg1)
         ui->label_show->show();
         // 软件信息加载
         QString info;
-        info= "包名： "+json["Pkgname"].toString()+"\n";
-        info+="版本号： "+json["Version"].toString()+"\n";
+        info= "PkgName： "+json["Pkgname"].toString()+"\n";
+        info+="Version： "+json["Version"].toString()+"\n";
         if(json["Author"].toString()!="" && json["Author"].toString()!=" "){
-            info+="作者： "+json["Author"].toString()+"\n";
+            info+="Author： "+json["Author"].toString()+"\n";
         }
 
         if(json["Website"].toString()!="" && json["Website"].toString()!=" "){
-            info+="官网： "+json["Website"].toString()+"\n";
+            info+="Official Site： "+json["Website"].toString()+"\n";
             ui->pushButton_website->show();
             appweb=json["Website"].toString();
         }
-        info+="投稿者： "+json["Contributor"].toString()+"\n";
-        info+="更新时间： "+json["Update"].toString()+"\n";
-        info+="大小： "+json["Size"].toString()+"\n";
+        info+="Contributor： "+json["Contributor"].toString()+"\n";
+        info+="Update Time： "+json["Update"].toString()+"\n";
+        info+="Installed Size： "+json["Size"].toString()+"\n";
         ui->label_info->setText(info);
         ui->label_more->setText(json["More"].toString());
         QProcess isInstall;
@@ -496,11 +509,11 @@ void Widget::loadappinfo(QUrl arg1)
         isInstall.waitForFinished();
         int error=QString::fromStdString(isInstall.readAllStandardError().toStdString()).length();
         if(error==0){
-            ui->pushButton_download->setText("重新安装");
+            ui->pushButton_download->setText("Reinstall");
             ui->pushButton_uninstall->show();
 
         }else {
-            ui->pushButton_download->setText("安装");
+            ui->pushButton_download->setText("Install");
         }
         //tag加载
         QString tags=json["Tags"].toString();
@@ -526,9 +539,13 @@ void Widget::loadappinfo(QUrl arg1)
         // 图标加载
         get_json.start("curl -o icon.png "+urladdress+"icon.png");
         get_json.waitForFinished();
-        QPixmap appicon(QString::fromUtf8(TMP_PATH)+"/icon.png");
-        ui->label_appicon->setPixmap(appicon);
-        ui->pushButton_download->setEnabled(true);
+        if(!get_json.exitCode()) {
+          QPixmap appicon(QString::fromUtf8(TMP_PATH)+"/icon.png");
+          ui->label_appicon->setPixmap(appicon);
+          ui->pushButton_download->setEnabled(true);
+        }
+        else
+          system("notify-send Failed to load App icon --icon=spark-store");
 
 
         // 截图展示加载
@@ -562,6 +579,7 @@ void Widget::loadappinfo(QUrl arg1)
         ui->label_show->setText("");
         ui->label_show->hide();
     }
+    return 0;
 }
 
 void Widget::on_pushButton_download_clicked()
@@ -573,7 +591,7 @@ void Widget::on_pushButton_download_clicked()
     download_list[allDownload-1].pkgName=pkgName;
     if(fileName.isEmpty())
     {
-        system("notify-send 获取失败 --icon=spark-store");
+        system("notify-send Failed to get file name --icon=spark-store");
         return;
     }
     download_list[allDownload-1].setParent(ui->listWidget);
@@ -598,7 +616,7 @@ void Widget::on_pushButton_download_clicked()
         nowDownload+=1;
         startRequest(urList.at(nowDownload-1)); // 进行链接请求
     }
-    if(ui->pushButton_download->text()=="重新安装"){
+    if(ui->pushButton_download->text()=="Reinstall"){
         download_list[allDownload-1].reinstall=true;
     }
 }
@@ -621,7 +639,7 @@ void Widget::searchApp(QString text)
     if(text.left(6)=="spk://"){
         openUrl(text);
     }else {
-        system("notify-send 目前仅支持商店专用链接的打开，搜索功能正在开发，请期待以后的版本！ --icon=spark-store");
+        system("notify-send The store can only process spk:// url now.Please look forward to later version! --icon=spark-store");
         // ui->webView->setUrl(QUrl("http://www.baidu.com/s?wd="+text));
         // ui->stackedWidget->setCurrentIndex(0);
     }
@@ -698,6 +716,14 @@ void Widget::on_pushButton_return_clicked()
     // }
 }
 
+void Widget::on_pushButton_refresh_clicked()
+{
+    if(ui->stackedWidget->currentIndex() == 2) //如果在详情页面要重新触发UrlChanged
+      emit ui->webEngineView->urlChanged(ui->webEngineView->url());
+    else
+      ui->webEngineView->reload();
+}
+
 void Widget::on_comboBox_server_currentIndexChanged(const QString &arg1)
 {
     if(configCanSave){
@@ -733,7 +759,7 @@ void Widget::on_pushButton_updateApt_clicked()
 {
     QtConcurrent::run([=](){
        ui->pushButton_updateApt->setEnabled(false);
-       ui->label_aptserver->setText("请稍等，正在更新");
+       ui->label_aptserver->setText("Updating,PLease wait");
        std::fstream sourcesList;
        QDir tmpdir("/tmp");
        tmpdir.mkpath("spark-store");
@@ -906,7 +932,20 @@ void Widget::on_webEngineView_urlChanged(const QUrl &arg1)
         load.cancel();//打开并发加载线程前关闭正在执行的线程
         load = QtConcurrent::run([=](){
 
-            loadappinfo(arg1);
+            int loadresult = loadappinfo(arg1);
+            if(!loadresult)
+              return;
+            else {
+              switch(loadresult)
+              {
+                case 1: // 空的arg1
+                  //此处不应通知用户
+                  break;
+                case 2: // curl下载app.json失败
+                  system("notify-send 应用程序详细信息下载失败，请检查网络连接 --icon=spark-store");
+                  break;
+              }
+            }
         });
     }
 }

@@ -75,7 +75,9 @@ private slots:
 
     void on_webEngineView_loadFinished(bool arg1);
 
-public:
+    void on_pushButton_refresh_clicked();
+
+  public:
 
     QUrl url;
 
@@ -96,7 +98,7 @@ public:
 private:
     void initUI();
     void initConfig();
-    void loadappinfo(QUrl);
+    int loadappinfo(QUrl);
     void chooseLeftMenu(int index);
     void setfoot(int);
     void updatefoot();
