@@ -7,8 +7,8 @@
 QT       += core gui network concurrent webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-TRANSLATIONS = ./trans/lang_English.ts \
-               ./trans/lang_Chinses.ts
+TRANSLATIONS = ./trans/spark-store_en.ts \
+               ./trans/spark-store_zh_CN.ts
 
 CONFIG += link_pkgconfig
 PKGCONFIG += dtkwidget
@@ -52,3 +52,18 @@ FORMS += \
 
 RESOURCES += \
     icons.qrc
+
+DISTFILES += \
+    tags/a2d-small.png \
+    tags/a2d.png \
+    tags/community-small.png \
+    tags/community.png \
+    tags/deepin-small.png \
+    tags/dtk-small.png \
+    tags/ubuntu-small.png \
+    tags/ubuntu.png \
+    tags/uos-small.png \
+    tags/community.svg \
+    tags/deepin.svg \
+    tags/logo_icon.svg \
+    tags/uos.svg

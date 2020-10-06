@@ -150,7 +150,7 @@
       <item row="11" column="0" colspan="6">
        <widget class="QPushButton" name="menu_dev">
         <property name="text">
-         <string>Coding</string>
+         <string>Development</string>
         </property>
        </widget>
       </item>
@@ -170,7 +170,7 @@
          </size>
         </property>
         <property name="toolTip">
-         <string>回到分类</string>
+         <string>Back to category</string>
         </property>
         <property name="text">
          <string/>
@@ -214,14 +214,17 @@
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>FrontPage</string>
+         <string>Home  </string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
       <item row="7" column="0" colspan="6">
        <widget class="QPushButton" name="menu_photo">
         <property name="text">
-         <string>Images</string>
+         <string>Graphics</string>
         </property>
        </widget>
       </item>
@@ -235,7 +238,7 @@
       <item row="4" column="0" colspan="6">
        <widget class="QPushButton" name="menu_chat">
         <property name="text">
-         <string>Chatting</string>
+         <string>Communication</string>
         </property>
        </widget>
       </item>
@@ -287,7 +290,7 @@
          </size>
         </property>
         <property name="toolTip">
-         <string>重新加载</string>
+         <string>Reload</string>
         </property>
         <property name="text">
          <string/>
@@ -377,7 +380,7 @@
           <number>0</number>
          </property>
          <property name="text">
-          <string>The List is empty now.Go and Download some software!</string>
+          <string>The list is currently empty. Go and download some softwares!</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -409,7 +412,7 @@
           <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
-          <string>打开文件夹</string>
+          <string>Open download directory</string>
          </property>
         </widget>
        </item>
@@ -474,6 +477,45 @@
               <bool>true</bool>
              </property>
              <layout class="QGridLayout" name="gridLayout">
+              <item row="3" column="0">
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Maximum</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>70</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="2">
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Maximum</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>60</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="5" column="1">
+               <widget class="QPushButton" name="pushButton_download">
+                <property name="text">
+                 <string>Install</string>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="3" colspan="2">
                <widget class="QLabel" name="label_appname">
                 <property name="font">
@@ -487,7 +529,7 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="3" rowspan="5" colspan="7">
+              <item row="3" column="3" rowspan="5" colspan="8">
                <widget class="QLabel" name="label_info">
                 <property name="font">
                  <font>
@@ -533,7 +575,7 @@
                 </property>
                </widget>
               </item>
-              <item row="0" column="9">
+              <item row="0" column="10">
                <spacer name="horizontalSpacer_6">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -545,45 +587,6 @@
                  </size>
                 </property>
                </spacer>
-              </item>
-              <item row="3" column="2">
-               <spacer name="horizontalSpacer_2">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Maximum</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>60</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="3" column="0">
-               <spacer name="horizontalSpacer">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Maximum</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>70</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="5" column="1">
-               <widget class="QPushButton" name="pushButton_download">
-                <property name="text">
-                 <string>Install</string>
-                </property>
-               </widget>
               </item>
               <item row="7" column="1" rowspan="2">
                <spacer name="verticalSpacer_2">
@@ -669,7 +672,14 @@
                 </property>
                </spacer>
               </item>
-              <item row="1" column="3" colspan="7">
+              <item row="0" column="8">
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Share</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3" colspan="8">
                <widget class="QWidget" name="widget" native="true">
                 <property name="minimumSize">
                  <size>
@@ -724,7 +734,7 @@
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to Ubuntu 20.04&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
-                    <string>UB</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/ubuntu-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -762,7 +772,7 @@
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Capable to UOS home 20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/uos.svg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/uos-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -793,8 +803,14 @@
                      <height>16777215</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A deepin-wine2 app.If you are using ubuntu or other non-deepin distro,you should deploy deepin-wine2 by your self.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A deepin-wine2 app.If you are using ubuntu or other non-deepin distro,you should deploy deepin-wine2 by your self.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/dwine2-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -813,7 +829,7 @@
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A deepin-wine5 app.If you are using ubuntu or other non-deepin distro,you should deploy deepin-wine5 by your self.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
-                    <string>wine</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/tags/dwine5-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -852,10 +868,10 @@
                 </layout>
                </widget>
               </item>
-              <item row="0" column="8">
-               <widget class="QPushButton" name="pushButton">
+              <item row="0" column="9">
+               <widget class="QPushButton" name="pushButton_translate">
                 <property name="text">
-                 <string>Share</string>
+                 <string>Contribute translation</string>
                 </property>
                </widget>
               </item>
@@ -880,7 +896,7 @@
               <item>
                <widget class="QLabel" name="label_more">
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;由社区爱好者开发的软件商店&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An app store developed by community enthusiasts&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -919,7 +935,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>ScreenShots</string>
+                 <string>Screenshots</string>
                 </property>
                </widget>
               </item>
@@ -1066,8 +1082,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>903</width>
-            <height>852</height>
+            <width>738</width>
+            <height>896</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_23">
